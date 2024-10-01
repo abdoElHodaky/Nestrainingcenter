@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 
 import { Express, Response } from 'express';
-
+import { ApiTags } from "@nestjs/swagger";
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { AuthService } from './auth.service';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -26,6 +26,7 @@ import { User } from './user.entity';
 import * as path from 'path';
 import * as fs from 'fs';
 
+@ApiTags("Authentication")
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
