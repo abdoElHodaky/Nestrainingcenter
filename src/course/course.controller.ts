@@ -1,4 +1,5 @@
 import { Express, Response } from 'express';
+import { AuthGuard } from '@nestjs/passport';
 import { 
   ApiTags,
   ApiSecurity,
@@ -29,7 +30,9 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { Material } from './entities/material.entity';
 
+@ApiBearerAuth('JWTAuth')
 @ApiTags("Course")
+@UseGuards(AuthGuard('jwt'))
 @Controller('course')
 export class CourseController {
   constructor(private readonly courseService: CourseService) {}
