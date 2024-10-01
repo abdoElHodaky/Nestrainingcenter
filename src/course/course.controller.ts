@@ -1,4 +1,9 @@
 import { Express, Response } from 'express';
+import { 
+  ApiTags,
+  ApiSecurity,
+  ApiBearerAuth
+} from "@nestjs/swagger";
 
 import {
   Controller,
@@ -24,6 +29,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { Material } from './entities/material.entity';
 
+@ApiTags("Course")
 @Controller('course')
 export class CourseController {
   constructor(private readonly courseService: CourseService) {}
