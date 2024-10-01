@@ -3,7 +3,8 @@ import { AuthGuard } from '@nestjs/passport';
 import { 
   ApiTags,
   ApiSecurity,
-  ApiBearerAuth
+  ApiBearerAuth,
+  ApiExcludeEndpoint
 } from "@nestjs/swagger";
 
 import {
@@ -43,11 +44,13 @@ export class CourseController {
     return this.courseService.create(createCourseDto);
   }
 
+  @ApiExcludeEndpoint()
   @Get()
   findAll() {
     return this.courseService.findAll();
   }
 
+  @ApiExcludeEndpoint()
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.courseService.findOne(+id);
@@ -76,7 +79,9 @@ export class CourseController {
     );
   }
 
+  
   @Get('material/:id')
+  @ApiExcludeEndpoint()
   findMaterials(@Param('id', ParseIntPipe) id: number) {
     return this.courseService.findMaterials(id);
   }
@@ -87,6 +92,7 @@ export class CourseController {
   }
 
   @Get('file/:id')
+  @ApiExcludeEndpoint()
   async downloadFile(
     @Param('id', ParseIntPipe) id: number,
     @Res() res: Response,
@@ -128,6 +134,7 @@ export class CourseController {
   }
 
   @Get(':courseId/participant')
+  @ApiExcludeEndpoint()
   findCourseParticipants(@Param('courseId', ParseIntPipe) courseId: number) {
     return this.courseService.getParticipantsForCourse(courseId);
   }
