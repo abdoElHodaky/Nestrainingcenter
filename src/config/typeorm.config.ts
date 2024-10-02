@@ -7,16 +7,18 @@ import { Instructor } from 'src/instructor/entities/instructor.entity';
 import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
 var parse = require('pg-connection-string').parse;
+# Do not expose your Neon credentials to the browser
 
+//DATABASE_URL='postgresql://:@/?sslmode=require'
 var connectionOptions = parse(`${database_url}`)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
  // name: connectionOptions.name,
-  host: connectionOptions.host,
-  port: connectionOptions.port,
-  username: connectionOptions.username,
-  password: connectionOptions.password,
-  database: connectionOptions.database,
+  host: "ep-billowing-mud-a1s0uks8.ap-southeast-1.aws.neon.tech",
+  //port: connectionOptions.port,
+  username: "nestjs-training-center_owner",
+  password: "qr4BigjP1WUz",
+  database: "nestjs-training-center",
   entities: [Instructor, Course, Material, Participant, Bill, User],
   synchronize: true,
   extra:{
