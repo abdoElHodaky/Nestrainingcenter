@@ -11,7 +11,7 @@ var parse = require('pg-connection-string').parse;
 var connectionOptions = parse(`${database_url}`)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  name: connectionOptions.name,
+ // name: connectionOptions.name,
   host: connectionOptions.host,
   port: connectionOptions.port,
   username: connectionOptions.username,
