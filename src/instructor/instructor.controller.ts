@@ -12,6 +12,7 @@ import {
   ParseIntPipe,
   ValidationPipe,
   UsePipes,
+  UseGuards
 } from '@nestjs/common';
 import { Express, Response } from 'express';
 import { InstructorService } from './instructor.service';
@@ -22,7 +23,16 @@ import { saveImageToStorage } from '../helpers/image.storage';
 import { Instructor } from './entities/instructor.entity';
 import * as path from 'path';
 import * as fs from 'fs';
+import { 
+  ApiTags,
+  ApiSecurity,
+  ApiBearerAuth,
+  ApiExcludeEndpoint
+} from "@nestjs/swagger";
 
+@ApiBearerAuth('JWTAuth')
+@ApiTags("Instructor")
+@UseGuards(AuthGuard('jwt'))
 @Controller('instructor')
 export class InstructorController {
   constructor(private readonly instructorService: InstructorService) {}
