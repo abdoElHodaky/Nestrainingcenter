@@ -6,7 +6,7 @@ RUN git config --global url."https://".insteadOf ssh:// && chmod +x build.sh
 ENV NODE_ENV ${NODE_ENV}
 #RUN npm i -g npm@8.12.2 pm2
 RUN npm cache verify && npm cache clean --force
-RUN npm install swagger-themes --save
+#RUN npm install swagger-themes --save
 #RUN npm install paytabs_pt2 
 RUN npm run build
 
