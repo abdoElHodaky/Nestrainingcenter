@@ -22,7 +22,7 @@ async function bootstrap() {
         'JWTAuth',
       )
     .addServer('/', '')
-    .addTag('Auth',"Authentication")
+    .addTag('Authentication',"auth endpoints")
     .addTag('Instructor','instructors endpoints')
     .addTag('Participant',"participants endpoints")
     .addTag('Bill',"Bill endpoints")
