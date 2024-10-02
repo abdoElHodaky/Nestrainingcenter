@@ -14,6 +14,7 @@ import {
   UsePipes,
   UseGuards
 } from '@nestjs/common';
+import { AuthGuard } from "@nestjs/passport";
 import { Express, Response } from 'express';
 import { InstructorService } from './instructor.service';
 import { CreateInstructorDto } from './dto/create-instructor.dto';
