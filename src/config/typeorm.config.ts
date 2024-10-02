@@ -5,7 +5,7 @@ import { Course } from 'src/course/entities/course.entity';
 import { Material } from 'src/course/entities/material.entity';
 import { Instructor } from 'src/instructor/entities/instructor.entity';
 import { Participant } from 'src/participant/entities/participant.entity';
-const database_url="postgresql://nestjs-training-center_owner:qr4BigjP1WUz@ep-billowing-mud-a1s0uks8.ap-southeast-1.aws.neon.tech/nestjs-training-center?sslmode=require"
+const database_url=process.env.DATABASE_URL
 var parse = require('pg-connection-string').parse;
 
 var connectionOptions = parse(`${database_url}`)
