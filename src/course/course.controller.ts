@@ -1,4 +1,4 @@
-import { Express, Response ,UseGuards} from 'express';
+import { Express, Response } from 'express';
 import { AuthGuard } from '@nestjs/passport';
 import { 
   ApiTags,
@@ -21,6 +21,7 @@ import {
   ParseIntPipe,
   UploadedFile,
   Res,
+  UseGuards
 } from '@nestjs/common';
 import { CourseService } from './course.service';
 import { CreateCourseDto } from './dto/create-course.dto';
