@@ -24,10 +24,10 @@ async function bootstrap() {
     .addServer('/', '')
     .addTag('Auth',"Authentication")
     .addTag('Instructor','instructors endpoints')
-    .addTag('Partipant',"participants endpoints")
+    .addTag('Participant',"participants endpoints")
     .addTag('Bill',"Bill endpoints")
     .addTag('Dashboard',"dashboard endpoints")
-    .addTag('Attachment',"attachments endpoints")
+    //.addTag('Attachment',"attachments endpoints")
     .build();
   
   const document = SwaggerModule.createDocument(app, options);
