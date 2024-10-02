@@ -7,7 +7,6 @@ import { Instructor } from 'src/instructor/entities/instructor.entity';
 import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
 var parse = require('pg-connection-string').parse;
-# Do not expose your Neon credentials to the browser
 
 //DATABASE_URL='postgresql://:@/?sslmode=require'
 var connectionOptions = parse(`${database_url}`)
