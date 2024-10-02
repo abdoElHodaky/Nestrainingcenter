@@ -11,10 +11,10 @@ import {
   Res,
   ParseIntPipe,
   ValidationPipe,
-  UsePipes,
+  UsePipes,UseGuards
 } from '@nestjs/common';
 import { Express, Response } from 'express';
-
+import { AuthGuard } from "@nestjs/passport";
 import { ParticipantService } from './participant.service';
 import { CreateParticipantDto } from './dto/create-participant.dto';
 import { UpdateParticipantDto } from './dto/update-participant.dto';
@@ -24,7 +24,16 @@ import { Participant } from './entities/participant.entity';
 
 import * as path from 'path';
 import * as fs from 'fs';
+import { 
+  ApiTags,
+  ApiSecurity,
+  ApiBearerAuth,
+  ApiExcludeEndpoint
+} from "@nestjs/swagger";
 
+@ApiBearerAuth('JWTAuth')
+@ApiTags("Participant")
+@UseGuards(AuthGuard('jwt'))
 @Controller('participant')
 export class ParticipantController {
   constructor(private readonly participantService: ParticipantService) {}
