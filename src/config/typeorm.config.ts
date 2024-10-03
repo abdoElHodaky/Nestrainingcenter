@@ -11,14 +11,14 @@ const database_url=process.env.DATABASE_URL
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
-  cache:true/*{
-    type:"redis",
+  cache:{
+    type:"ioredis",
     options:{
-      redisParser.parse(process.env.CACHE_URL)
+      port:`${process.env.CACHE_URL}`
       //url:`${process.env.CACHE_URL}`,
     },
     duration: 300000
-  }*/,
+  },
   entities: [Instructor, Course, Material, Participant, Bill, User],
   synchronize: true,
   extra:{
