@@ -6,19 +6,19 @@ import { Material } from 'src/course/entities/material.entity';
 import { Instructor } from 'src/instructor/entities/instructor.entity';
 import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
-var redisParser = require('redis-url-parser');
+//var redisParser = require('redis-url-parser');
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
-  cache:{
+  cache:true/*{
     type:"redis",
     options:{
       redisParser.parse(process.env.CACHE_URL)
       //url:`${process.env.CACHE_URL}`,
     },
     duration: 300000
-  },
+  }*/,
   entities: [Instructor, Course, Material, Participant, Bill, User],
   synchronize: true,
   extra:{
