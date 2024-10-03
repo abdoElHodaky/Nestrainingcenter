@@ -6,6 +6,7 @@ import { Material } from 'src/course/entities/material.entity';
 import { Instructor } from 'src/instructor/entities/instructor.entity';
 import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
+var redisParser = require('redis-url-parser');
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -13,10 +14,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   cache:{
     type:"redis",
     options:{
-      username:"default",
-      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
-      host:"known-skink-21141.upstash.io",
-      port:6379
+      redisParser.parse(process.env.CACHE_URL)
       //url:`${process.env.CACHE_URL}`,
     },
     duration: 300000
