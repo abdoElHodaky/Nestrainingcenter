@@ -7,7 +7,7 @@ ENV NODE_ENV ${NODE_ENV}
 RUN npm cache verify && npm cache clean --force
 #RUN npm install swagger-themes --save
 #RUN npm install paytabs_pt2 
-RUN npm i && npm run build
+RUN npm install --save redis-url-parser && npm run build
 
 EXPOSE 3000
 CMD ["node","dist/main.js"]
