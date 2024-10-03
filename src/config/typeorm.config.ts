@@ -6,18 +6,15 @@ import { Material } from 'src/course/entities/material.entity';
 import { Instructor } from 'src/instructor/entities/instructor.entity';
 import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
-var parse = require('pg-connection-string').parse;
 
-//DATABASE_URL='postgresql://:@/?sslmode=require'
-var connectionOptions = parse(`${database_url}`)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
   cache:{
     type:"redis",
-    options:{
+   // options:{
       url:`${process.env.CACHE_URL}`,
-    },
+   // },
     duration: 300000
   },
   entities: [Instructor, Course, Material, Participant, Bill, User],
