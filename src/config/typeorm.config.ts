@@ -12,9 +12,13 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   url:`${database_url}&connect_timeout=50`,
   cache:{
     type:"redis",
-   // options:{
-      url:`${process.env.CACHE_URL}`,
-   // },
+    options:{
+      username:"default",
+      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
+      host:"known-skink-21141.upstash.io",
+      port:6379
+      //url:`${process.env.CACHE_URL}`,
+    },
     duration: 300000
   },
   entities: [Instructor, Course, Material, Participant, Bill, User],
