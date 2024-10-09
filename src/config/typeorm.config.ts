@@ -14,7 +14,7 @@ const client = new Redis( {
   username:"default",
   password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
   tls: {
-    rejectUnauthorized: false
+    //rejectUnauthorized: false
   }
 });
 client.on("connect",console.log)
