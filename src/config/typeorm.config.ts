@@ -8,30 +8,24 @@ import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
 //var redisParser = require('redis-url-parser');
 import Redis from "ioredis"
-const client = new Redis( {
-  port:6379,
-  host:"known-skink-21141.upstash.io",
-  username:"default",
-  password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
-  tls: {
-    //rejectUnauthorized: false
-  }
+/*)const client = new Redis( {
+  
 });
-console.log(client)
+console.log(client)*/
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
   cache:{
-   /* type:"ioredis",
+    type:"ioredis",
     options:{
-      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
-      host:"known-skink-21141.upstash.io",
-      port:"6379",
-      tls:true,
-      username:"default",
-      family:6
-     // port:`${process.env.CACHE_URL}`,
-      //url:`${process.env.CACHE_URL}`,*/
+      port:6379,
+     host:"known-skink-21141.upstash.io",
+     username:"default",
+     password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
+     tls: {
+    //rejectUnauthorized: false
+    }
+    },
     duration: 300000
     },
   entities: [Instructor, Course, Material, Participant, Bill, User],
