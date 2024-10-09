@@ -9,12 +9,10 @@ const database_url=process.env.DATABASE_URL
 //var redisParser = require('redis-url-parser');
 import Redis from "ioredis"
 console.log(new Redis({
-     password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
-      host:"known-skink-21141.upstash.io",
-      port:"6379",
-      tls:true,
-      username:"default",
-      family:6
+     port:"6379",
+     host:"known-skink-21141.upstash.io",
+     username:"default",
+     password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA"
 }))
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
