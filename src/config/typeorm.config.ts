@@ -12,7 +12,8 @@ var rsclinet=new Redis({
      port:6379,
      host:"known-skink-21141.upstash.io",
      username:"default",
-     password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA"
+     password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
+     connectTimeout:20000
 })
 rsclient.on("connect",console.log)
 export const typeOrmConfig: TypeOrmModuleOptions = {
