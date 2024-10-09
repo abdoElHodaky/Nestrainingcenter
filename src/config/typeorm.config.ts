@@ -17,12 +17,7 @@ const client = new Redis( {
     //rejectUnauthorized: false
   }
 });
-client.on("connect",d=>{
-  console.log(d)
-})
-client.on("error",d=>{
-  console.log(d)
-})
+console.log(client)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
