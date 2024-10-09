@@ -28,9 +28,8 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
       family:6
      // port:`${process.env.CACHE_URL}`,
       //url:`${process.env.CACHE_URL}`,*/
-    },
     duration: 300000
-  },
+    },
   entities: [Instructor, Course, Material, Participant, Bill, User],
   synchronize: true,
   extra:{
