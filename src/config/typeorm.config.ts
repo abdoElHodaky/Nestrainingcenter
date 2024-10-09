@@ -14,7 +14,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   cache:{
     type:"ioredis",
    // options:{
-      port:`${process.env.CACHE_URL}`
+      port:`${process.env.CACHE_URL}`,
       //url:`${process.env.CACHE_URL}`,
    // },
     duration: 300000
