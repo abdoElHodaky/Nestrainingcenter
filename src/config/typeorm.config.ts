@@ -8,17 +8,12 @@ import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
 //var redisParser = require('redis-url-parser');
 import Redis from "ioredis"
-var rsclinet=new Redis({
-     port:6379,
-     host:"known-skink-21141.upstash.io",
-     username:"default",
-     password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
-    tls:{
-         ignoreUnauthorized:true
-     },
-     connectTimeout:20000
-})
-rsclinet.on("connect",console.log)
+const client = new Redis(process.env.CACHE_URL, {
+  tls: {
+    rejectUnauthorized: false
+  }
+});
+client.on("connect",console.log)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
