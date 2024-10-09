@@ -18,6 +18,7 @@ const client = new Redis( {
   }
 });
 client.on("connect",console.log)
+client.on("error",console.log)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
