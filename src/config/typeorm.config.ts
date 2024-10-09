@@ -13,7 +13,7 @@ console.log(new Redis({
      host:"known-skink-21141.upstash.io",
      username:"default",
      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA"
-}))
+}).status)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
