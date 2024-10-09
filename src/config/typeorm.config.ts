@@ -13,6 +13,9 @@ var rsclinet=new Redis({
      host:"known-skink-21141.upstash.io",
      username:"default",
      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
+    tls:{
+         ignoreUnauthorized:true
+     },
      connectTimeout:20000
 })
 rsclinet.on("connect",console.log)
@@ -20,7 +23,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
   cache:{
-    type:"ioredis",
+   /* type:"ioredis",
     options:{
       password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
       host:"known-skink-21141.upstash.io",
@@ -29,7 +32,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
       username:"default",
       family:6
      // port:`${process.env.CACHE_URL}`,
-      //url:`${process.env.CACHE_URL}`,
+      //url:`${process.env.CACHE_URL}`,*/
     },
     duration: 300000
   },
