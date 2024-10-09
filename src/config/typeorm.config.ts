@@ -13,10 +13,10 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   url:`${database_url}&connect_timeout=50`,
   cache:{
     type:"ioredis",
-   // options:{
-      port:`${process.env.CACHE_URL}`,
-      //url:`${process.env.CACHE_URL}`,
-   // },
+    options:{
+     // port:`${process.env.CACHE_URL}`,
+      url:`${process.env.CACHE_URL}`,
+    },
     duration: 300000
   },
   entities: [Instructor, Course, Material, Participant, Bill, User],
