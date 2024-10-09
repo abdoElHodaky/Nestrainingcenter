@@ -14,8 +14,11 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   cache:{
     type:"ioredis",
     options:{
+      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
+      host:"known-skink-21141.upstash.io",
+      port:"6379"
      // port:`${process.env.CACHE_URL}`,
-      url:`${process.env.CACHE_URL}`,
+      //url:`${process.env.CACHE_URL}`,
     },
     duration: 300000
   },
