@@ -8,7 +8,11 @@ import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
 //var redisParser = require('redis-url-parser');
 import Redis from "ioredis"
-const client = new Redis(process.env.CACHE_URL, {
+const client = new Redis( {
+ port:6379,
+  host:"known-skink-21141.upstash.io",
+  username:"default",
+  password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
   tls: {
     rejectUnauthorized: false
   }
