@@ -8,7 +8,7 @@ import { Participant } from 'src/participant/entities/participant.entity';
 const database_url=process.env.DATABASE_URL
 //var redisParser = require('redis-url-parser');
 import Redis from "ioredis"
-console.log(new Redis(process.env.CACHE_URL)
+console.log(new Redis(process.env.CACHE_URL))
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
