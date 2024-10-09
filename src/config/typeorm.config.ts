@@ -18,7 +18,8 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
       host:"known-skink-21141.upstash.io",
       port:"6379",
       tls:true,
-      username:""
+      username:"default",
+      family:6
      // port:`${process.env.CACHE_URL}`,
       //url:`${process.env.CACHE_URL}`,
     },
