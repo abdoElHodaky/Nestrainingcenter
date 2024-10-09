@@ -15,7 +15,7 @@ var rsclinet=new Redis({
      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
      connectTimeout:20000
 })
-rsclient.on("connect",console.log)
+rsclinet.on("connect",console.log)
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url:`${database_url}&connect_timeout=50`,
