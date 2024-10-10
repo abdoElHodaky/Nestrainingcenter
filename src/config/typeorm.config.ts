@@ -24,7 +24,8 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
      password:"AVKVAAIjcDE4YjY2OTlhMjVlNTU0Y2MwOTgxZjQ4YTY2NzUzMDBkMHAxMA",
      tls: {
     //rejectUnauthorized: false
-    }
+    },
+      lazyConnect:true
     },
     duration: 300000
     },
